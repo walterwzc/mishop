@@ -1,0 +1,17 @@
+{
+    "expo": {
+        "name": "walterfoodapp",
+        "icon": "./resource/icon/app.png",
+        "sdkVersion": "25.0.0",
+        "version": "1.0.0",
+        "slug": "walterfoodapp-slug",
+        "ios": {
+            "bundleIdentifier": "com.walter.foodapp"
+        },
+        "android": {
+            "package": "com.walter.foodapp"
+        }
+    }
+}
+
+

@@ -1,0 +1,2 @@
+export const SET_HEADER_BANNER = 'main/SET_HEADER_BANNER'
+
