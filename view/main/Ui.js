@@ -26,6 +26,11 @@ let banner1 =  require('../../resource/images/main/banner/banner-1.jpg');
 let source = resolveAssetSource(banner1);
 
 export default class Main extends React.Component {
+
+    static navigationOptions = {
+        header: null
+    }
+
     constructor(props) {
         super(props);
     }
@@ -35,6 +40,9 @@ export default class Main extends React.Component {
     }
 
     render() {
+
+        // this.props.navigate
+
         const messageIcon = require('../../resource/images/main/message.png')
         const searchIcon = require('../../resource/images/main/search.png')
         const qrCodeIcon = require('../../resource/images/main/qrcode.png')
@@ -60,6 +68,9 @@ export default class Main extends React.Component {
                         <TextInput
                             style={styles.searchInput}
                             underlineColorAndroid="transparent"
+                            onFocus={() => {
+                                this.props.navigate('SearchPage');
+                            }}
                         />
                     </View>
                     <Image source={qrCodeIcon} style={styles.qrCodeIcon} />

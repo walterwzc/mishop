@@ -29,7 +29,9 @@ class ShoppingCar extends Component {
                         <Text
                             style={styles.emptyShoppingCarText}    
                         >购物车还是空的</Text>
-                        <TouchableWithoutFeedback>
+                        <TouchableWithoutFeedback
+                            onPress={() => {this.props.navigate('Main')}}
+                        >
                             <View style={styles.goShopping}>
                                 <Text>去逛逛</Text>
                             </View>

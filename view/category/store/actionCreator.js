@@ -1,27 +1,19 @@
-import { CHANGE_REFRESHING, CHANGE_LIST } from './actionTypes'
+import { GET_CATEGORYLIST } from './actionTypes'
 
-export const getRefreshingAction = (status) => ({
-	type: CHANGE_REFRESHING,
-	value: status
+
+export const categoryListAction = (list) => ({
+	type: GET_CATEGORYLIST,
+	list: list
 })
 
-export const getChangeListAction = (list, cover) => ({
-	type: CHANGE_LIST,
-	list: list,
-	refreshing: false,
-	cover: cover
-})
-
-export const getListDataAction = (cover) => {
+export const getCategoryListAction = () => {
 	return (dispatch) => {
-		let url = "http://www.gp5.com/api/hotlist.json"
+		let url = "http://api.m.mi.com/v1/home/category_v2"
 		fetch(url)
 			.then(res => res.json())
 			.then((res) => {
-				if (res.ret && res.data) {
-					const action = getChangeListAction(res.data.list, cover)
-					dispatch(action)
-				}
+                const action = categoryListAction(res.data);
+                dispatch(action);
 			})
 	}
 }

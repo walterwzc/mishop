@@ -5,6 +5,7 @@ import {
     ScrollView,
     Image,
     Dimensions,
+    TouchableWithoutFeedback,
 } from 'react-native'
 
 import styles from './style'
@@ -25,9 +26,13 @@ class Mine extends Component {
                         source={{uri: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-data-mishop/c52c11c915d43e0ac3286161eec4fcaf.jpg'}}
                         style={styles.userAvatar}
                     ></Image>
-                    <View>
-                        <Text style={styles.userLogin}>登录/注册</Text>
-                    </View>
+                    <TouchableWithoutFeedback
+                        onPress={() => { this.props.navigate('Login') }}
+                    >
+                        <View>
+                            <Text style={styles.userLogin}>登录/注册</Text>
+                        </View>
+                    </TouchableWithoutFeedback>
                     <Image 
                         source={require('../../resource/images/main/message2.png')} 
                         style={styles.userMessage}

@@ -1,15 +1,21 @@
 import React from 'react'
 import Home from './view/home/View'
+import SearchPage from "./view/search/Ui";
+import ShoppingCar from './view/shoppingcar/view';
+import Main from './view/main/View';
+import Login from './view/login/Ui';
+
 import { StackNavigator } from 'react-navigation'
 import { Provider } from 'react-redux'
-
-import Demo8 from "./view/sometest/Demo8";
 
 import store from './store/'
 
 const RouteApp = StackNavigator({
-    // Demo8: { screen: Demo8 },
-    Home: { screen: Home }
+    Home: { screen: Home },
+    SearchPage: { screen: SearchPage },
+    ShoppingCar: { screen: ShoppingCar},
+    Main: { screen: Main},
+    Login: { screen: Login},
 })
 
 const App = () => {

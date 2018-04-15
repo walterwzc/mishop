@@ -1,2 +1,1 @@
-export const CHANGE_REFRESHING = 'category/CHANGE_REFRESHING'
-export const CHANGE_LIST = 'category/CHANGE_LIST'
+export const GET_CATEGORYLIST = 'category/GET_CATEGORYLIST'

@@ -1,15 +1,15 @@
 {
     "expo": {
-        "name": "walterfoodapp",
+        "name": "小米商城练习",
         "icon": "./resource/icon/app.png",
         "sdkVersion": "25.0.0",
         "version": "1.0.0",
-        "slug": "walterfoodapp-slug",
+        "slug": "xiaomimall-slug",
         "ios": {
-            "bundleIdentifier": "com.walter.foodapp"
+            "bundleIdentifier": "com.walter.xiaomimall"
         },
         "android": {
-            "package": "com.walter.foodapp"
+            "package": "com.walter.xiaomimall"
         }
     }
 }

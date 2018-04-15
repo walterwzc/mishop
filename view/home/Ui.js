@@ -10,11 +10,15 @@ import { View as Mine } from '../mine/'
 export default class Home extends React.Component {
 
     // 通过设置 navigationOptions 的 height为0，statusBar 的高度为0， 而不是设置Statusbar
+    // static navigationOptions = {
+    //     headerStyle: {
+    //         backgroundColor: '#000',
+    //         height: 0
+    //     }
+    // }
+
     static navigationOptions = {
-        headerStyle: {
-            backgroundColor: '#000',
-            height: 0
-        }
+        header: null
     }
 
     render() {
@@ -85,7 +89,7 @@ export default class Home extends React.Component {
                     )}
                     onPress={() => this.props.changeSelectedTab('shoppingcar')}
                 >
-                    <ShoppingCar />
+                    <ShoppingCar navigate={this.props.navigation.navigate} />
                 </TabNavigator.Item>
                 <TabNavigator.Item
                     selected={this.props.selectedTab === 'mine'}
@@ -101,7 +105,7 @@ export default class Home extends React.Component {
                     )}
                     onPress={() => this.props.changeSelectedTab('mine')}
                 >
-                    <Mine />
+                    <Mine navigate={this.props.navigation.navigate} />
                 </TabNavigator.Item>
             </TabNavigator>
         )
