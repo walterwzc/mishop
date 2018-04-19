@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {
+    Alert,
     View, 
     Text, 
     ScrollView,
@@ -52,8 +53,25 @@ class Settings extends Component {
                 </View>
                 <TouchableWithoutFeedback
                     onPress={() => {
-                        this.props.userLogout();
-                        this.props.navigation.navigate('Home');
+                        Alert.alert('温馨提醒', '确定退出吗?', [
+                            {
+                                text: '取消',
+                                onPress: () => {}
+                            },
+                            {
+                                text: '确定',
+                                onPress: () =>
+                                    // ToastAndroid.show(
+                                    //     '你点击了确定~',
+                                    //     ToastAndroid.SHORT
+                                    // )
+                                    {
+                                        this.props.userLogout();
+                                        this.props.navigation.navigate('Home');
+                                    }
+                            }
+                        ])
+                        
                     }}
                 >
                     <View style={{height: 45, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff', marginTop: 30, marginLeft: 20, marginRight: 20, borderRadius: 30}}>

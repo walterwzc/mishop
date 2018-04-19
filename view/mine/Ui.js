@@ -5,8 +5,10 @@ import {
     ScrollView,
     Image,
     Dimensions,
+    TouchableOpacity,
     TouchableWithoutFeedback,
     AsyncStorage,
+    Alert,
 } from 'react-native'
 
 import styles from './style'
@@ -210,7 +212,7 @@ class Mine extends Component {
                         style={styles.serviceRightArrow}
                     ></Image>
                 </View>
-                <TouchableWithoutFeedback
+                <TouchableOpacity
                     onPress={() => {
                         this.props.navigate('Settings')
                     }}
@@ -228,7 +230,7 @@ class Mine extends Component {
                             style={styles.serviceRightArrow}
                         ></Image>
                     </View>
-                </TouchableWithoutFeedback>
+                </TouchableOpacity>
             </ScrollView>
         )
     }

@@ -12,7 +12,7 @@ import ModalExample from "./view/zTextComponent/ModalExample";
 import ActivityIndicatorDemo from "./view/zTextComponent/ActivityIndicatorDemo";
 import StatusBarDemo from "./view/zTextComponent/StatusBarDemo";
 import DialogDemo from "./view/zTextComponent/DialogDemo";
-
+import AlertDemo from "./view/zTextComponent/AlertDemo";
 
 import { StackNavigator } from 'react-navigation'
 import { Provider } from 'react-redux'
@@ -32,6 +32,7 @@ import {
 // ActivityIndicatorDemo: { screen: ActivityIndicatorDemo },
 // StatusBarDemo: { screen: StatusBarDemo },
 // DialogDemo: { screen: DialogDemo},
+// AlertDemo: { screen: AlertDemo },
 const RouteApp = StackNavigator({
     Home: { screen: Home },
     SearchPage: { screen: SearchPage },
