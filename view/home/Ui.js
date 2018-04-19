@@ -10,16 +10,16 @@ import { View as Mine } from '../mine/'
 export default class Home extends React.Component {
 
     // 通过设置 navigationOptions 的 height为0，statusBar 的高度为0， 而不是设置Statusbar
-    // static navigationOptions = {
-    //     headerStyle: {
-    //         backgroundColor: '#000',
-    //         height: 0
-    //     }
-    // }
-
     static navigationOptions = {
-        header: null
+        headerStyle: {
+            backgroundColor: '#000',
+            height: 0
+        }
     }
+
+    // static navigationOptions = {
+    //     header: null
+    // }
 
     render() {
         return (

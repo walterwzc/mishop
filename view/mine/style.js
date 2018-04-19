@@ -27,6 +27,14 @@ export default StyleSheet.create({
         marginLeft: 10
     },
 
+    userAlreadyLogin: {
+        lineHeight: 88,
+        color: '#fff',
+        marginLeft: 10,
+        fontSize: 16,
+        fontWeight: '400',
+    },
+
     userMessage: {
         width: 21,
         height: 21,

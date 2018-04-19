@@ -6,6 +6,7 @@ import {
     Image,
     Dimensions,
     TouchableWithoutFeedback,
+    AsyncStorage,
 } from 'react-native'
 
 import styles from './style'
@@ -13,11 +14,46 @@ import styles from './style'
 class Mine extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            storageLoginStatus: false,
+        };
     }
 
     render() {
         
         const screenWidth = Dimensions.get('window').width;
+
+        // this.props.loginStatus
+        AsyncStorage.getItem('loginStatus', (error, result) => {
+            result = result === "true" ? true : false;
+            this.setState({
+                storageLoginStatus: result
+            })
+        })
+
+        let userNameArea = null;
+        if (this.state.storageLoginStatus || this.props.loginStatus) {
+
+            userNameArea = (<TouchableWithoutFeedback
+                // onPress={() => { this.props.navigate('Login') }}
+            >
+                <View>
+                    <Text style={styles.userAlreadyLogin}>欢迎，沃尔特</Text>
+                </View>
+            </TouchableWithoutFeedback>
+            )
+        } else {
+            userNameArea = (
+                <TouchableWithoutFeedback
+                    onPress={() => { this.props.navigate('Login') }}
+                >
+                    <View>
+                        <Text style={styles.userLogin}>登录/注册</Text>
+                    </View>
+                </TouchableWithoutFeedback>
+                
+            )
+        }
 
         return (
             <ScrollView style={styles.mineContainer}>
@@ -26,13 +62,9 @@ class Mine extends Component {
                         source={{uri: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-data-mishop/c52c11c915d43e0ac3286161eec4fcaf.jpg'}}
                         style={styles.userAvatar}
                     ></Image>
-                    <TouchableWithoutFeedback
-                        onPress={() => { this.props.navigate('Login') }}
-                    >
-                        <View>
-                            <Text style={styles.userLogin}>登录/注册</Text>
-                        </View>
-                    </TouchableWithoutFeedback>
+                    
+                    {userNameArea}
+
                     <Image 
                         source={require('../../resource/images/main/message2.png')} 
                         style={styles.userMessage}
@@ -178,19 +210,25 @@ class Mine extends Component {
                         style={styles.serviceRightArrow}
                     ></Image>
                 </View>
-                <View style={styles.detailServiceCon}>
-                    <View style={styles.itemLeftCon}>
+                <TouchableWithoutFeedback
+                    onPress={() => {
+                        this.props.navigate('Settings')
+                    }}
+                >
+                    <View style={styles.detailServiceCon}>
+                        <View style={styles.itemLeftCon}>
+                            <Image 
+                                source={{uri: 'http://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/36e0473c6b0a2d9220de7180e733d787.png'}}
+                                style={styles.itemLeftImage}
+                            ></Image>
+                            <Text>设置</Text>
+                        </View>
                         <Image 
-                            source={{uri: 'http://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/36e0473c6b0a2d9220de7180e733d787.png'}}
-                            style={styles.itemLeftImage}
+                            source={require('../../resource/images/main/ico-right-arrow.png')}
+                            style={styles.serviceRightArrow}
                         ></Image>
-                        <Text>设置</Text>
                     </View>
-                    <Image 
-                        source={require('../../resource/images/main/ico-right-arrow.png')}
-                        style={styles.serviceRightArrow}
-                    ></Image>
-                </View>
+                </TouchableWithoutFeedback>
             </ScrollView>
         )
     }

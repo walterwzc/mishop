@@ -30,7 +30,10 @@ class ShoppingCar extends Component {
                             style={styles.emptyShoppingCarText}    
                         >购物车还是空的</Text>
                         <TouchableWithoutFeedback
-                            onPress={() => {this.props.navigate('Main')}}
+                            onPress={() => {
+                                this.props.navigate('Home')
+                                this.props.changeSelectedTab('main');
+                            }}
                         >
                             <View style={styles.goShopping}>
                                 <Text>去逛逛</Text>

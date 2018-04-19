@@ -5,6 +5,7 @@ import { reducer as home } from '../view/home/'
 import { reducer as discovery } from '../view/discovery/'
 import { reducer as shoppingcar } from '../view/shoppingcar/'
 import { reducer as mine } from '../view/mine/'
+import { reducer as login } from "../view/login/";
 
 const reducer = combineReducers({
     main,
@@ -12,7 +13,8 @@ const reducer = combineReducers({
     category,
     discovery,
     shoppingcar,
-    mine
+    mine,
+    login
 })
 
 export default reducer

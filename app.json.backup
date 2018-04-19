@@ -1,0 +1,21 @@
+{
+    "expo": {
+        "name": "小米商城练习",
+        "icon": "./resource/icon/app.png",
+        "sdkVersion": "25.0.0",
+        "version": "1.0.0",
+        "slug": "xiaomimall-slug",
+        "ios": {
+            "bundleIdentifier": "com.walter.xiaomimall"
+        },
+        "android": {
+            "package": "com.walter.xiaomimall"
+        },
+        "androidStatusBar": {
+            "barStyle": "dark-content",
+            "backgroundColor": "#0A48A5"
+        }
+    }
+}
+
+
